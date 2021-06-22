@@ -3,11 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 const List<Color> _kKolors = [
-  Color(0xff351F39),
-  Color(0xff1D2D50),
+  Color(0xff053F5E),
   Color(0xff16213E),
+  Color(0xff27496D),
   Color(0xff0F3460),
-  Color(0xff160F30),
+  Color(0xff28518A),
   Color(0xff17223B),
   Color(0xff071E3D),
   Color(0xff003545),
@@ -39,9 +39,15 @@ class TodoGroup {
   late Color color;
   List<Todo> todos = [];
   late DateTime date;
+  // TodoGroup(this.name)
+  //      :color = getRandomColor(),
+  //       date = DateTime.now();
+
   TodoGroup(this.name)
       : color = getRandomColor(),
         date = DateTime.now();
+
+  addTodo(Todo todo) => todos.add(todo);
 }
 
 class Todo {
@@ -53,7 +59,7 @@ class Todo {
     this.isCompleted = false,
   }) : date = DateTime.now();
 
-  doggleDone() {
+  toggleDone() {
     isCompleted = !isCompleted;
   }
 
